@@ -32,10 +32,10 @@ class Router
 
     public static function get($route, $controller, $action)
     {
-        (new self())->addRoute($route, $controller, $action, 'GET');
+        self::addRoute($route, $controller, $action, 'GET');
     }
     public static function post($route, $controller, $action)
     {
-        (new self())->addRoute($route, $controller, $action, 'POST');
+        self::addRoute($route, $controller, $action, 'POST');
     }
 }
