@@ -22,6 +22,10 @@ class PersonneController
     }
     public function store()
     {
+        // Check CSRF token
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("CSRF token validation failed");
+        }
         $payload = [
             'firstName' => htmlspecialchars($_POST['firstName']),
             'lastName' => htmlspecialchars($_POST['lastName']),
