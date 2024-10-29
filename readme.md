@@ -76,5 +76,4 @@ Feel free to submit issues or pull requests if you'd like to contribute to this 
 ## Contact
 
 For questions, please reach out to the project maintainer at [meh.laraibi@gmail.com](mailto:meh.laraibi@gmail.com).
-```
 
