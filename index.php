@@ -2,19 +2,20 @@
 
 use App\Router;
 use App\controllers\PersonneController;
+use App\Env;
 
 spl_autoload_register(function ($class) {
     $file = $class . ".php";
     include($file);
 });
 
+
+Env::load();
 session_start();
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// $router = new Router();
-// $router->addRoute('home', PersonneController::class, 'index');
 Router::get('addPerson', PersonneController::class, 'create');
 Router::post('addPerson', PersonneController::class, 'store');
 Router::get('editPerson', PersonneController::class, 'edit');
